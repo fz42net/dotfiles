@@ -5,7 +5,7 @@ if [[ $# -eq 1 ]]; then
   selected="$1"
 else
   # wrap the command-substitution in quotes, so $selected keeps its spaces
-  selected="$(find ~/src ~/src/github.com/fatzombi/ ~/ ~/Documents/ \
+  selected="$(find ~/src ~/src/github.com/fz42net/ ~/ ~/Documents/ \
     -mindepth 1 -maxdepth 1 -type d | fzf)"
 fi
 

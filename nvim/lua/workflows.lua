@@ -15,7 +15,7 @@ vim.keymap.set("n", "<leader>of", ":s/\\(# \\)[^_]*_/\\1/ | s/-/ /g<cr>")
 
 -- Searching for notes in our vault
 vim.keymap.set("n", "<leader>os", ":Telescope find_files search_dirs={\"/Users/joe/Documents/Obsidian\\ Vault\"}<cr>")
-vim.keymap.set("n", "<leader>oz", ":Telescope live_grep search_dirs={\"/Users/jojoee/Documents/Obsidian\\ Vault\"}<cr>")
+vim.keymap.set("n", "<leader>oz", ":Telescope live_grep search_dirs={\"/Users/joe/Documents/Obsidian\\ Vault\"}<cr>")
 
 -- Performing our weekly review
 -- move file in current buffer to zettelkasten folder

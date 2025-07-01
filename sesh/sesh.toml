@@ -6,36 +6,40 @@ path = "~/Documents/Obsidian Vault/"
 startup_command = "nvim +ObsidianToday"
 
 [[session]]
-name = "getbelch"
-path = "~/src/github.com/fatzombi/getbelch/"
+name = "fz42net blog"
+path = "~/src/github.com/fz42net/blog/"
+
+[[session]]
+name = "proxetic"
+path = "~/src/github.com/fz42net/proxetic/"
 
 [[session]]
 name = "dotfiles"
-path = "~/src/github.com/fatzombi/dotfiles/"
+path = "~/src/github.com/fz42net/dotfiles/"
 
 [[session]]
 name = "neovim config"
-path = "~/src/github.com/fatzombi/dotfiles/nvim"
+path = "~/src/github.com/fz42net/dotfiles/nvim"
 
 [[session]]
 name = "tmux config"
-path = "~/src/github.com/fatzombi/dotfiles/tmux"
+path = "~/src/github.com/fz42net/dotfiles/tmux"
 
 [[session]]
 name = "zsh config"
-path = "~/src/github.com/fatzombi/dotfiles/zsh"
+path = "~/src/github.com/fz42net/dotfiles/zsh"
 
 [[session]]
 name = "ghostty config"
-path = "~/src/github.com/fatzombi/dotfiles/ghostty"
+path = "~/src/github.com/fz42net/dotfiles/ghostty"
 
 [[session]]
 name = "aerospace config"
-path = "~/src/github.com/fatzombi/dotfiles/aerospace"
+path = "~/src/github.com/fz42net/dotfiles/aerospace"
 startup_command = "nvim aerospace.toml"
-preview_command = "bat --style='full' --color=always ~/src/github.com/fatzombi/dotfiles/aerospace/aerospace.toml"
+preview_command = "bat --style='full' --color=always ~/src/github.com/fz42net/dotfiles/aerospace/aerospace.toml"
 
 [[session]]
 name = "redbeard"
-path = "~/src/github.com/fatzombi/redbeard"
+path = "~/src/github.com/fz42net/redbeard"
 

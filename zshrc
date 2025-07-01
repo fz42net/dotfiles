@@ -1,7 +1,7 @@
 # Exports
-export DOTFILES=$HOME/src/github.com/fatzombi/dotfiles
+export DOTFILES=$HOME/src/github.com/fz42net/dotfiles
 export ZSH=$DOTFILES/zsh
-export PROJECTS=$HOME/src/github.com/fatzombi/
+export PROJECTS=$HOME/src/github.com/fz42net/
 
 source $ZSH/options.zsh
 source $ZSH/variables.zsh
@@ -34,13 +34,13 @@ fi
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Added by Windsurf
-export PATH="/Users/fatzombi/.codeium/windsurf/bin:$PATH"
+export PATH="/Users/fz42net/.codeium/windsurf/bin:$PATH"
 
 # Added by Windsurf
-export PATH="/Users/fatzombi/.codeium/windsurf/bin:$PATH"
+export PATH="/Users/fz42net/.codeium/windsurf/bin:$PATH"
 
 # bun completions
-[ -s "/Users/fatzombi/.bun/_bun" ] && source "/Users/fatzombi/.bun/_bun"
+[ -s "/Users/fz42net/.bun/_bun" ] && source "/Users/fz42net/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
@@ -94,5 +94,5 @@ complete -C /opt/homebrew/bin/aws-sso aws-sso
 
 # END_AWS_SSO_CLI
 
-export PATH=$PATH:/Users/fatzombi/.spicetify
-alias claude="/Users/fatzombi/.claude/local/claude"
+export PATH=$PATH:/Users/fz42net/.spicetify
+alias claude="/Users/joe/.claude/local/claude"

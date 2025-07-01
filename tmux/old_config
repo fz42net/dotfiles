@@ -83,7 +83,7 @@ set -g history-limit 1000000
 set -s set-clipboard on
 
 bind-key -r f run-shell "tmux neww ~/bin/tmux-sessionizer"
-#bind-key -r C run-shell "~/bin/tmux-sessionizer ~/src/github.com/fatzombi/cloudfusion/"
+#bind-key -r C run-shell "~/bin/tmux-sessionizer ~/src/github.com/fz42net/cloudfusion/"
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'

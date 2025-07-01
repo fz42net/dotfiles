@@ -1,6 +1,6 @@
 [user]
 	name = Phil Thomas
-	email = phil@fatzombi.com
+	email = phil@fz42.net
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process

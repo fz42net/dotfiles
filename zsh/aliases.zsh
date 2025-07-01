@@ -2,7 +2,7 @@ alias reload!='. ~/.zshrc'
 alias cls='clear'
 
 alias s='sesh connect $(sesh list | fzf)'
-alias S='sesh connect "$(fd -td --max-depth 1 . ~/Documents | fzf)"'
+alias S='sesh connect "$(fd -td --max-depth 1 . ~/Documents ~/src/github.com/fatzombi ~/src/github.com/atomitsolutions | fzf)"'
 
 alias oo='cd ~/Documents/Obsidian\ Vault/Inbox; vim'
 alias or='cd ~/Documents/Obsidian\ Vault/Inbox; vim *.md'

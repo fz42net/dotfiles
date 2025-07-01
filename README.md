@@ -7,9 +7,9 @@
 
 ## Usage
 ```shell
-mkdir -p src/github.com/fatzombi/
-git clone git@github.com:fatzombi/dotfiles.git --recursive ~/src/github.com/fatzombi/dotfiles/
-cd ~/src/github.com/fatzombi/dotfiles
+mkdir -p src/github.com/fz42net/
+git clone git@github.com:fz42net/dotfiles.git --recursive ~/src/github.com/fz42net/dotfiles/
+cd ~/src/github.com/fz42net/dotfiles
 ./install
 ```
 
