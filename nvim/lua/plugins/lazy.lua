@@ -15,16 +15,16 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   { "onsails/lspkind.nvim" },
 
-  { "github/copilot.vim",
-    -- set vim.g.copilot_filetypes to false for md files and true for everything else
-    config = function()
-      vim.g.copilot_filetypes = {
-        markdown = false,
-        ["*"] = true
-      }
-    end
-
-  },
+--  { "github/copilot.vim",
+--    -- set vim.g.copilot_filetypes to false for md files and true for everything else
+--    config = function()
+--      vim.g.copilot_filetypes = {
+--        markdown = false,
+--        ["*"] = true
+--      }
+--    end
+--
+-- },
 
   {
     "lewis6991/gitsigns.nvim",
