@@ -1,0 +1,37 @@
+#!/bin/sh
+#
+# This lets you clone a github directory into a subdirectory structure in our src directory.
+#
+# Type:
+#
+#   clone
+#
+#    clone https://github.com/fatzombi/dotfiles
+#
+# ...to quickly clone dotfiles into ~/src/github.com/fatzombi/dotfiles, for example.
+#
+## Stolen from rwxrob - https://github.com/rwxrob/dot/blob/main/.bashrc
+#
+clone () {
+	local repo="$1" user
+	local repo="${repo#https://github.com/}"
+	local repo="${repo#git@github.com:}"
+
+  if [[ $repo =~ / ]]; then
+		user="${repo%%/*}"
+	else
+		user="$USER"
+		[[ -z "$user" ]] && user="$USER"
+	fi
+	
+  local name="${repo##*/}"
+	local userd="$PROJECTS/github.com/$user"
+	local localpath="$userd/$name"
+	[[ -d "$localpath" ]] && cd "$localpath" && return
+
+  mkdir -p "$userd"
+	cd "$userd"
+	echo gh repo clone "$user/$name" -- --recurse-submodule
+	gh repo clone "$user/$name" -- --recurse-submodule
+	cd "$name"
+}

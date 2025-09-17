@@ -6,9 +6,10 @@
       force: true     # <– remove non-symlinks first
 
 - link:
-    ~/.local/bin/nvim: link/bin/nvim-personal
+    ~/bin/nvim: link/bin/nvim-personal
 
 - shell:
+  - chmod +x "$HOME/src/github.com/fz42net/dotfiles/link/bin/nvim-personal"
   - |
     if ! grep -q 'gitconfig.personal.include' ~/.gitconfig 2>/dev/null; then
       printf '\n[include]\n  path = ~/.gitconfig.personal.include\n' >> ~/.gitconfig

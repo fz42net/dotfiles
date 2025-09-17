@@ -1,41 +1,72 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+echo "🚀 Starting dotfiles bootstrap..."
+
 if [[ -f /Library/Preferences/com.company.mdm.plist ]] || [[ "${IS_WORK:-}" == "1" ]]; then
   IS_WORK=true
+  echo "📊 Detected work environment (IS_WORK=true)"
 else
   IS_WORK=false
+  echo "🏠 Detected personal environment (IS_WORK=false)"
 fi
 
-# Ensure dotbot is available (Linux-safe)
-if ! command -v dotbot >/dev/null 2>&1; then
-  python3 -m pip install --user dotbot --break-system-packages || true
-  export PATH="$HOME/.local/bin:$PATH"
+# Use local dotbot submodule
+echo "🔧 Using local dotbot submodule..."
+DOTBOT_DIR="$(cd "$(dirname "$0")/../dotbot"; pwd)"
+DOTBOT_BIN="$DOTBOT_DIR/bin/dotbot"
+
+if [[ ! -x "$DOTBOT_BIN" ]]; then
+  echo "❌ Dotbot binary not found or not executable at $DOTBOT_BIN"
+  exit 1
 fi
+echo "✅ Dotbot found at $DOTBOT_BIN"
 
 # Public configs
+echo "📂 Configuring public dotfiles..."
 pushd "$(cd "$(dirname "$0")/.."; pwd)"
-dotbot -c install.common.yaml
-$IS_WORK && dotbot -c install.work.yaml || dotbot -c install.personal.yaml
+echo "🔧 Running common configuration..."
+"$DOTBOT_BIN" -c install.common.yaml
+if $IS_WORK; then
+  echo "💼 Running work-specific configuration..."
+  "$DOTBOT_BIN" -c install.work.yaml
+else
+  echo "🏠 Running personal configuration..."
+  "$DOTBOT_BIN" -c install.personal.yaml
+fi
 popd
 
 # Private repo (sparse-checkout)
-if [[ ! -d "$HOME/.dotfiles-private" ]]; then
-  git clone --no-checkout git@github.com:fz42net/dotfiles-private.git "$HOME/.dotfiles-private"
-  pushd "$HOME/.dotfiles-private"
+echo "🔐 Setting up private dotfiles repository..."
+if [[ ! -d "$HOME/src/github.com/fz42net/dotfiles-private" ]]; then
+  echo "📥 Cloning private dotfiles repository..."
+  git clone --no-checkout git@github.com:fz42net/dotfiles-private.git "$HOME/src/github.com/fz42net/dotfiles-private"
+  pushd "$HOME/src/github.com/fz42net/dotfiles-private"
+  echo "🌿 Initializing sparse checkout..."
   git sparse-checkout init --cone
   if $IS_WORK; then
-    git sparse-checkout set common work-safe install.common.yaml install.work.yaml
+    echo "💼 Setting up work-safe sparse checkout..."
+    git sparse-checkout set common work install.common.yaml install.work.yaml
   else
-    git sparse-checkout set common work-safe personal-only install.common.yaml install.personal.yaml
+    echo "🏠 Setting up personal sparse checkout..."
+    git sparse-checkout set common work personal install.common.yaml install.personal.yaml
   fi
+  echo "✅ Checking out files..."
   git checkout
 else
-  pushd "$HOME/.dotfiles-private"
+  echo "📁 Private dotfiles repository already exists, updating..."
+  pushd "$HOME/src/github.com/fz42net/dotfiles-private"
 fi
 
-dotbot -c install.common.yaml
-$IS_WORK && dotbot -c install.work.yaml || dotbot -c install.personal.yaml
+echo "🔧 Running private common configuration..."
+"$DOTBOT_BIN" -c install.common.yaml
+if $IS_WORK; then
+  echo "💼 Running private work-specific configuration..."
+  "$DOTBOT_BIN" -c install.work.yaml
+else
+  echo "🏠 Running private personal configuration..."
+  "$DOTBOT_BIN" -c install.personal.yaml
+fi
 popd
 
 echo "✅ dotfiles bootstrap complete (IS_WORK=$IS_WORK)"

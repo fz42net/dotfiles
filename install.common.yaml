@@ -7,16 +7,41 @@
       
 # 2) Enforce home structure
 - shell:
-  - [ "mkdir", "-p", "$HOME/bin", "$HOME/assets", "$HOME/src/github.com", "$HOME/tmp" ]
+  - mkdir -p "$HOME/bin" "$HOME/assets" "$HOME/src/github.com" "$HOME/tmp"
 
-# 3) Core links
+# 3) Install Homebrew (cross-platform) and packages
+- shell:
+  - |
+    if ! command -v brew >/dev/null 2>&1; then
+      echo "Installing Homebrew..."
+      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    else
+      echo "Homebrew already installed"
+    fi
+  - |
+    # Add common Homebrew paths
+    export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
+
+    if command -v brew >/dev/null 2>&1; then
+      echo "Installing packages from Brewfile.base..."
+      brew bundle install --file=brew/Brewfile.base || echo "brew bundle failed, continuing..."
+    else
+      echo "Skipping brew bundle - Homebrew not available"
+    fi
+
+# 4) Core links
 - link:
-    ~/.zshrc: link/zshrc
-    ~/.zsh: link/zsh
-    ~/.tmux.conf: link/tmux.conf
+    ~/.config/ghostty: link/ghostty
     ~/.config/nvim: link/nvim
     ~/.gitconfig: git/gitconfig.base
+    ~/.tmux: link/tmux
+    ~/.tmux.conf: link/tmux.conf
+    ~/.zsh: link/zsh
+    ~/.zshrc: link/zshrc
 
-# 4) Post linking
+# 5) Post linking
 - shell:
   - [ "echo", "[public] common installed" ]
+  - [git submodule update --init --recursive, Installing submodules]
+  - [~/.tmux/plugins/tpm/bin/install_plugins, Installing tmux TPM plugins]
+  - [./bin/osx.sh, Setting macOS defaults]
