@@ -1,0 +1,13 @@
+[submodule "dotbot"]
+	path = dotbot
+	url = https://github.com/anishathalye/dotbot
+	ignore = dirty
+[submodule "plugins/dotbot-if"]
+	path = plugins/dotbot-if
+	url = https://github.com/wonderbeyond/dotbot-if.git
+[submodule "link/zsh/plugins/antidote"]
+	path = link/zsh/plugins/antidote
+	url = https://github.com/mattmc3/antidote.git
+[submodule "link/tmux/plugins/tpm"]
+	path = link/tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm

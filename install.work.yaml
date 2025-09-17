@@ -1,0 +1,16 @@
+# 1) Defaults
+- defaults:
+    link:
+      create: true
+      relink: true    # <– overwrite existing files
+      force: true     # <– remove non-symlinks first
+  
+- link:
+    ~/.local/bin/nvim: link/bin/nvim-work
+
+- shell:
+  - |
+    if ! grep -q 'gitconfig.work.include' ~/.gitconfig 2>/dev/null; then
+      printf '\n[include]\n  path = ~/.gitconfig.work.include\n' >> ~/.gitconfig
+    fi
+  - [ "echo", "[public] work overlay applied" ]

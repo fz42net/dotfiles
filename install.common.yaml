@@ -1,0 +1,22 @@
+# 1) Defaults
+- defaults:
+    link:
+      create: true
+      relink: true    # <– overwrite existing files
+      force: true     # <– remove non-symlinks first
+      
+# 2) Enforce home structure
+- shell:
+  - [ "mkdir", "-p", "$HOME/bin", "$HOME/assets", "$HOME/src/github.com", "$HOME/tmp" ]
+
+# 3) Core links
+- link:
+    ~/.zshrc: link/zshrc
+    ~/.zsh: link/zsh
+    ~/.tmux.conf: link/tmux.conf
+    ~/.config/nvim: link/nvim
+    ~/.gitconfig: git/gitconfig.base
+
+# 4) Post linking
+- shell:
+  - [ "echo", "[public] common installed" ]

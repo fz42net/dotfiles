@@ -1,0 +1,6 @@
+tap "homebrew/core"
+brew "zsh"
+brew "tmux"
+brew "ripgrep"
+brew "fd"
+brew "jq"
