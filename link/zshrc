@@ -1,6 +1,6 @@
 # Exports
 export DOTFILES=$HOME/src/github.com/fz42net/dotfiles
-export ZSH=$DOTFILES/zsh
+export ZSH=$DOTFILES/link/zsh
 export PROJECTS=$HOME/src/github.com/fz42net/
 
 source $ZSH/options.zsh
