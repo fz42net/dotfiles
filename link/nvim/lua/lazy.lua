@@ -23,9 +23,9 @@ vim.g.maplocalleader = "\\"
 
 -- Setup lazy.nvim
 require("lazy").setup(require("plugins"), {
-    lockfile = P.is_work()
+  lockfile = P.is_work()
     and (vim.fn.stdpath("state").."/lazy-lock.work.json")
-    or (vim.fn.stdpath("state").."/lazy-lock.personal.json")
+    or (vim.fn.stdpath("state").."/lazy-lock.personal.json"),
     
   spec = {
     -- import your plugins
