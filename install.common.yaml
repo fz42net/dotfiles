@@ -36,7 +36,7 @@
 
 # Install homebrew packages and pip's argcomplete if on macOS
 - if:
-  - cond: '[[ "$(uname)" == "Darwin" ]]'
+    cond: '[[ "$(uname)" == "Darwin" ]]'
     met:
     - shell:
       - brew bundle install --file=brew/Brewfile.base
