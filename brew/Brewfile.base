@@ -19,4 +19,5 @@ brew "zf"
 brew "zoxide"
 brew "zsh"
 
+cask "cleanshot"
 cask "ghostty"
