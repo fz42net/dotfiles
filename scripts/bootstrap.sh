@@ -81,13 +81,13 @@ else
 fi
 
 echo "🔧 Running private common configuration..."
-"$DOTBOT_BIN" -c install.common.yaml -p plugins/dotbot-if/if.py
+"$DOTBOT_BIN" -c install.common.yaml -p ../dotfiles/plugins/dotbot-if/if.py
 if $IS_WORK; then
   echo "💼 Running private work-specific configuration..."
-  "$DOTBOT_BIN" -c install.work.yaml -p plugins/dotbot-if/if.py
+  "$DOTBOT_BIN" -c install.work.yaml -p ../dotfiles/plugins/dotbot-if/if.py
 else
   echo "🏠 Running private personal configuration..."
-  "$DOTBOT_BIN" -c install.personal.yaml -p plugins/dotbot-if/if.py
+  "$DOTBOT_BIN" -c install.personal.yaml -p ../dotfiles/plugins/dotbot-if/if.py
 fi
 popd
 
