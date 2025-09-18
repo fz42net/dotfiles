@@ -17,5 +17,4 @@ brew "zf"
 brew "zoxide"
 brew "zsh"
 
-tap homebrew/cask
 cask ghostty
