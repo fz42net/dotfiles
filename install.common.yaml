@@ -14,8 +14,7 @@
     ~/.config/ghostty: link/ghostty
     ~/.config/nvim: link/nvim
     ~/.gitconfig: git/gitconfig.base
-    ~/.tmux: link/tmux
-    ~/.tmux.conf: link/tmux.conf
+    ~/.config/tmux: link/tmux
     ~/.zsh: link/zsh
     ~/.zshrc: link/zshrc
 
