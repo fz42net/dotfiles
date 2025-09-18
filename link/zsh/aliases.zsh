@@ -2,7 +2,7 @@ alias reload!='. ~/.zshrc'
 alias cls='clear'
 
 alias s='sesh connect $(sesh list | fzf)'
-alias S='sesh connect "$(fd -td --max-depth 1 . ~/Documents ~/src/github.com/fz42net ~/src/github.com/atomitsolutions | fzf)"'
+alias S='sesh connect "$(fd -td --max-depth 1 . ~/Documents ~/src/github.com/fz42net | fzf)"'
 
 alias delete_pycache='find . -name '__pycache__' -type d -exec rm -r {} +'
 
