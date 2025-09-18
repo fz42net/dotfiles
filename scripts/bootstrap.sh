@@ -3,12 +3,34 @@ set -euo pipefail
 
 echo "🚀 Starting dotfiles bootstrap..."
 
+# Check for automatic detection first
 if [[ -f /Library/Preferences/com.company.mdm.plist ]] || [[ "${IS_WORK:-}" == "1" ]]; then
   IS_WORK=true
-  echo "📊 Detected work environment (IS_WORK=true)"
+  echo "📊 Auto-detected work environment (IS_WORK=true)"
 else
-  IS_WORK=false
-  echo "🏠 Detected personal environment (IS_WORK=false)"
+  # Interactive prompt for work/personal selection
+  echo ""
+  echo "Please select your environment:"
+  echo "1) 🏠 Personal workstation"
+  echo "2) 📊 Work workstation"
+  echo ""
+  read -p "Enter your choice (1 or 2): " choice
+
+  case $choice in
+    1)
+      IS_WORK=false
+      echo "🏠 Selected personal environment (IS_WORK=false)"
+      ;;
+    2)
+      IS_WORK=true
+      echo "📊 Selected work environment (IS_WORK=true)"
+      ;;
+    *)
+      echo "❌ Invalid choice. Defaulting to personal environment."
+      IS_WORK=false
+      echo "🏠 Defaulting to personal environment (IS_WORK=false)"
+      ;;
+  esac
 fi
 
 # Use local dotbot submodule
