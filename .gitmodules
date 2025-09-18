@@ -23,3 +23,6 @@
 [submodule "link/tmux/plugins/tmux-sessionx"]
 	path = link/tmux/plugins/tmux-sessionx
 	url = https://git::@github.com/omerxx/tmux-sessionx
+[submodule "link/tmux/plugins/tpm"]
+	path = link/tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
