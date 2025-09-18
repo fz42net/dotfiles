@@ -48,13 +48,13 @@ echo "✅ Dotbot found at $DOTBOT_BIN"
 echo "📂 Configuring public dotfiles..."
 pushd "$(cd "$(dirname "$0")/.."; pwd)"
 echo "🔧 Running common configuration..."
-"$DOTBOT_BIN" -c install.common.yaml
+"$DOTBOT_BIN" -c install.common.yaml -p plugins/dotbot-if/if.py
 if $IS_WORK; then
   echo "💼 Running work-specific configuration..."
-  "$DOTBOT_BIN" -c install.work.yaml
+  "$DOTBOT_BIN" -c install.work.yaml -p plugins/dotbot-if/if.py
 else
   echo "🏠 Running personal configuration..."
-  "$DOTBOT_BIN" -c install.personal.yaml
+  "$DOTBOT_BIN" -c install.personal.yaml -p plugins/dotbot-if/if.py
 fi
 popd
 
@@ -81,13 +81,13 @@ else
 fi
 
 echo "🔧 Running private common configuration..."
-"$DOTBOT_BIN" -c install.common.yaml
+"$DOTBOT_BIN" -c install.common.yaml -p plugins/dotbot-if/if.py
 if $IS_WORK; then
   echo "💼 Running private work-specific configuration..."
-  "$DOTBOT_BIN" -c install.work.yaml
+  "$DOTBOT_BIN" -c install.work.yaml -p plugins/dotbot-if/if.py
 else
   echo "🏠 Running private personal configuration..."
-  "$DOTBOT_BIN" -c install.personal.yaml
+  "$DOTBOT_BIN" -c install.personal.yaml -p plugins/dotbot-if/if.py
 fi
 popd
 
