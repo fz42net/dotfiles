@@ -1,6 +1,8 @@
 #!/bin/zsh
 # https://macos-defaults.com is very helpful
 
+echo "[osx.sh] Starting macOS configuration..."
+
 ## Dock
 defaults write com.apple.dock "orientation" -string "bottom"
 defaults write com.apple.dock "autohide" -bool "false"
@@ -28,7 +30,11 @@ defaults write NSGlobalDomain "NSTableViewDefaultSizeMode" -int "1"
 ## Desktop
 defaults write com.apple.finder "CreateDesktop" -bool "false"
 
-dockutil --remove all 
+echo "[osx.sh] Removing all dock items..."
+dockutil --remove all
 
+echo "[osx.sh] Restarting Dock and Safari..."
 killall Dock
 killall Safari
+
+echo "[osx.sh] macOS configuration complete!"
