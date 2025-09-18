@@ -41,6 +41,4 @@
     - shell:
       - brew bundle install --file=brew/Brewfile.base
     - shell:
-      - command: pip3 install argcomplete #--break-system-packages
-    - shell:
       - command: ./scripts/osx.sh
