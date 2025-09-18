@@ -8,3 +8,18 @@
 [submodule "link/zsh/plugins/antidote"]
 	path = link/zsh/plugins/antidote
 	url = https://github.com/mattmc3/antidote.git
+[submodule "link/tmux/plugins/tmux-floax"]
+	path = link/tmux/plugins/tmux-floax
+	url = https://git::@github.com/omerxx/tmux-floax
+[submodule "link/tmux/plugins/tmux-fzf-url"]
+	path = link/tmux/plugins/tmux-fzf-url
+	url = git@github.com:joshmedeski/tmux-fzf-url
+[submodule "link/tmux/plugins/tmux-nerd-font-window-name"]
+	path = link/tmux/plugins/tmux-nerd-font-window-name
+	url = git@github.com:joshmedeski/tmux-nerd-font-window-name
+[submodule "link/tmux/plugins/tmux-notify"]
+	path = link/tmux/plugins/tmux-notify
+	url = https://git::@github.com/rickstaa/tmux-notify
+[submodule "link/tmux/plugins/tmux-sessionx"]
+	path = link/tmux/plugins/tmux-sessionx
+	url = https://git::@github.com/omerxx/tmux-sessionx

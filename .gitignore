@@ -2,6 +2,6 @@
 brew/Brewfile.lock.json
 link/nvim/lazy-lock.json
 link/nvim/lazyvim.json
-link/tmux/plugins
+link/tpm/plugins/
 link/zsh/cache
 link/zsh/zsh_plugins.zsh
