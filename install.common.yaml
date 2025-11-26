@@ -7,7 +7,7 @@
       
 # 2) Enforce home structure
 - shell:
-  - mkdir -p "$HOME/bin" "$HOME/assets" "$HOME/src/github.com" "$HOME/tmp"
+  - mkdir -p "$HOME/bin" "$HOME/assets" "$HOME/src/github.com" "$HOME/src/gitlab.com" "$HOME/tmp"
 
 # 3) Core links
 - link:
