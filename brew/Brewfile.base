@@ -27,6 +27,5 @@ brew "zoxide"
 brew "zsh"
 
 cask "cleanshot"
-cask "ghostty"
 cask "slack"
 cask "visual-studio-code"
