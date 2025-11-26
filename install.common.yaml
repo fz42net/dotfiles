@@ -22,7 +22,7 @@
 - shell:
   - [ "echo", "[public] common installed" ]
   - [git submodule update --init --recursive, Installing submodules]
-  - [~/.tmux/plugins/tpm/bin/install_plugins, Installing tmux TPM plugins]
+  - [~/.config/tmux/plugins/tpm/bin/install_plugins, Installing tmux TPM plugins]
 
   # Install apt packages if on Linux
 - if:
