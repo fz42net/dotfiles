@@ -35,8 +35,8 @@ fi
 
 # Use local dotbot submodule
 echo "🔧 Using local dotbot submodule..."
-DOTBOT_DIR="$(cd "$(dirname "$0")/../dotbot"; pwd)"
-DOTBOT_BIN="$DOTBOT_DIR/bin/dotbot"
+DOTBOT_DIR="$(pwd)"
+DOTBOT_BIN="$(which dotbot)"
 
 if [[ ! -x "$DOTBOT_BIN" ]]; then
   echo "❌ Dotbot binary not found or not executable at $DOTBOT_BIN"
