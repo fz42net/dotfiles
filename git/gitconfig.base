@@ -1,8 +1,0 @@
-[core]
-  editor = nvim
-[alias]
-  st = status -sb
-  co = checkout
-  br = branch -vv
-  lg = log --oneline --graph --decorate
-# identities are included via ~/.gitconfig.work.include / ~/.gitconfig.personal.include
