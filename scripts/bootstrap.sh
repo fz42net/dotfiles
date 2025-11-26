@@ -33,8 +33,6 @@ else
   esac
 fi
 
-# Use local dotbot submodule
-echo "🔧 Using local dotbot submodule..."
 DOTBOT_DIR="$(pwd)"
 DOTBOT_BIN="$(which dotbot)"
 
