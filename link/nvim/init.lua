@@ -10,4 +10,4 @@ vim.o.updatetime = P.is_work() and 750 or 300
 pcall(require, "private")
 
 -- Plugin manager (lazy.nvim assumed)
-require("lazy")
+require("config.lazy")
